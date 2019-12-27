@@ -5,7 +5,7 @@ and doesn't need manual time-syncing.
 
 Tested on Windows and MacOS
 
-## How-to
+## Setup
 Clone repository. Use the Download button (green) or clone by
 ```
 git clone https://github.com/numpee/OnePickKillerV2
@@ -23,6 +23,9 @@ Create a new virtual environment and install the requirements.
 pip install -r requirements.txt
 ```
 
+
+## Run 
+
 Set the time with command-line parameters, and run the program!
 For example, if the Sugang time is 9:00:00 AM, then:
 
@@ -30,4 +33,6 @@ For example, if the Sugang time is 9:00:00 AM, then:
 python main.py --hour 9 --minute 0 --second 0
 ```
 
-One Pick Killer ~~
+**On MacOS Mojave, you may need to run with sudo permissions**
+
+Good luck~~
