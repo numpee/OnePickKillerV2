@@ -17,7 +17,7 @@ On terminal (or Command or Anaconda Prompt on Windows), change directory to the 
 cd path_to_directory
 ```
 
-Create a new virtual environment and install the requirements.
+Create a new python virtual environment and install the requirements. Virtualenv is preferred, but Anaconda works as well.
 
 ```
 pip install -r requirements.txt
@@ -33,6 +33,10 @@ For example, if the Sugang time is 9:00:00 AM, then:
 python main.py --hour 9 --minute 0 --second 0
 ```
 
-**On MacOS Mojave, you may need to run with sudo permissions**
+**You may have to run python with Administrator priveledges on Windows. On MacOS (Mojave +), you need to run python with sudo permissions**
 
-Good luck~~
+```
+sudo python main.py ...
+```
+
+Good luck :smile:
