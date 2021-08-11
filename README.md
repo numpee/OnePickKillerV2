@@ -1,4 +1,6 @@
-# One Pick Killer V2
+# One Pick Killer V2 
+
+![](https://img.shields.io/badge/python-3.6+-blue.svg)
 
 New and improved One Pick Killer. Automatically syncs with time server (time2.kriss.re.kr)
 and doesn't need manual time-syncing.
