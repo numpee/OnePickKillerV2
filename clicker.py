@@ -1,13 +1,12 @@
-from pynput.mouse import Button, Controller
+from pynput.mouse import Button, Controller as MouseController
+from pynput.keyboard import Key, Controller as KeyboardController
 import ntplib
 from datetime import datetime
-
-mouse = Controller()
 
 
 class Clicker(object):
     @classmethod
-    def start(cls, hour, minute, second, safety_margin_as_ms, server_url):
+    def start(cls, hour, minute, second, safety_margin_as_ms, server_url, mode):
         print("Calculating server and local offset")
         target_time = datetime.now().replace(hour=hour, minute=minute, second=second,
                                              microsecond=safety_margin_as_ms * 1000)
@@ -24,10 +23,26 @@ class Clicker(object):
 
         print("Start process")
         last_left_seconds = None
+
+        if mode == 'mouse':
+            device = MouseController()
+            def action():
+                device.click(Button.left)
+            print(f"Using Mouse")
+        elif mode == 'key':
+            device = KeyboardController()
+            def action():
+                # device.press(Key.enter)
+                # device.release(Key.enter)
+                device.tap(Key.enter)
+            print(f"Using Keyboard")
+        else:
+            raise NotImplementedError(f"No implementation for {mode}")
+
         while True:
             now = datetime.now()
             if real_target_time < now:
-                mouse.click(Button.left)
+                action()
                 print("Click on {} Local Time".format(now))
                 print("End process!")
                 break
